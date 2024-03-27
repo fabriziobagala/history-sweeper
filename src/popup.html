@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HistorySweeper</title>
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap-5.3.3/bootstrap.min.css">
+    <script type="text/javascript" src="libs/bootstrap-5.3.3/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- Information box -->
+    <div id="info-box" class="hidden">
+        <div class="content">
+            <h2>HistorySweeper</h2>
+            <p>&#169; Fabrizio Bagal&#224; 2024</p>
+            <p data-i18n="appVersion"></p>
+            <p data-i18n="icons8"></p>
+            <button id="close-btn" class="btn btn-primary" data-i18n="closeInfoBox"></button>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar bg-body-tertiary shadow-sm">
+        <div class="container-fluid">
+            <!-- Logo and title of the extension -->
+            <a id="info" class="navbar-brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 48 48">
+                    <linearGradient id="_mrS6zdlYNXjKXndQNmOka_Xnx8cxDef16O_gr1" x1="24" x2="24" y1="1.206" y2="19.206" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#eba600"></stop><stop offset="1" stop-color="#c28200"></stop></linearGradient><path fill="url(#_mrS6zdlYNXjKXndQNmOka_Xnx8cxDef16O_gr1)" d="M27,19h-6V4c0-1.657,1.343-3,3-3h0c1.657,0,3,1.343,3,3V19z"></path><rect width="6" height="5" x="21" y="13" fill="#16528c"></rect><linearGradient id="_mrS6zdlYNXjKXndQNmOkb_Xnx8cxDef16O_gr2" x1="24" x2="24" y1="44.265" y2="23.765" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffcf54"></stop><stop offset=".261" stop-color="#fdcb4d"></stop><stop offset=".639" stop-color="#f7c13a"></stop><stop offset="1" stop-color="#f0b421"></stop></linearGradient><path fill="url(#_mrS6zdlYNXjKXndQNmOkb_Xnx8cxDef16O_gr2)" d="M38,24H10C8.706,34.353,6,43,6,43s7.647,2,18,2s18-2,18-2S39.294,34.353,38,24z"></path><linearGradient id="_mrS6zdlYNXjKXndQNmOkc_Xnx8cxDef16O_gr3" x1="16.669" x2="16.669" y1="44.687" y2="34.602" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#eba600"></stop><stop offset="1" stop-color="#c28200"></stop></linearGradient><path fill="url(#_mrS6zdlYNXjKXndQNmOkc_Xnx8cxDef16O_gr3)" d="M18,44.778V34c-0.471,3.767-1.809,7.705-2.663,10.546C16.18,44.633,17.074,44.711,18,44.778z"></path><linearGradient id="_mrS6zdlYNXjKXndQNmOkd_Xnx8cxDef16O_gr4" x1="32.392" x2="32.392" y1="44.307" y2="29.756" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#eba600"></stop><stop offset="1" stop-color="#c28200"></stop></linearGradient><path fill="url(#_mrS6zdlYNXjKXndQNmOkd_Xnx8cxDef16O_gr4)" d="M33.784,44.42C32.922,41.117,31.747,34.974,31,29v15.701	C31.982,44.619,32.907,44.523,33.784,44.42z"></path><linearGradient id="_mrS6zdlYNXjKXndQNmOke_Xnx8cxDef16O_gr5" x1="22.142" x2="25.491" y1="15.701" y2="27.791" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0d61a9"></stop><stop offset="1" stop-color="#16528c"></stop></linearGradient><path fill="url(#_mrS6zdlYNXjKXndQNmOke_Xnx8cxDef16O_gr5)" d="M38,24H10v-2.77c0-1.369,0.919-2.57,2.247-2.905C14.551,17.744,18.565,17,24,17	s9.449,0.744,11.753,1.325C37.081,18.659,38,19.861,38,21.23V24z"></path>
+                </svg>
+                HistorySweeper
+                <span class="app-version">1.0.0</span>
+            </a>
+
+            <!-- Theme selection -->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <!-- Theme icon -->
+                    <a id="theme-icon" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        data-bs-auto-close="inside" aria-expanded="false">
+                        <span class="visually-hidden">Theme Icon</span>
+                    </a>
+
+                    <!-- Theme dropdown -->
+                    <ul class="dropdown-menu">
+                        <!-- Light theme option -->
+                        <li>
+                            <a id="light-theme" class="dropdown-item" href="#" data-theme="light">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+                                    <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+                                </svg>
+                                Light
+                            </a>
+                        </li>
+                        <!-- Dark theme option -->
+                        <li>
+                            <a id="dark-theme" class="dropdown-item" href="#" data-theme="dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill" viewBox="0 0 16 16">
+                                    <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+                                    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+                                </svg>
+                                Dark
+                            </a>
+                        </li>
+                        <!-- Auto theme option -->
+                        <li>
+                            <a id="auto-theme" class="dropdown-item" href="#" data-theme="auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"/>
+                                </svg>
+                                Auto
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form>
+            <!-- Time interval selection -->
+            <div class="row g-2 align-items-center mb-3 mt-2">
+                <!-- Label -->
+                <div class="col-auto">
+                    <label for="period" data-i18n="timeInterval">Time Interval</label>
+                </div>
+                
+                <!-- Dropdown -->
+                <div class="col-auto">
+                    <select id="period" name="period" class="form-select">
+                        <option value="hour" data-i18n="lastHour"></option>
+                        <option value="day" data-i18n="lastDay"></option>
+                        <option value="week" data-i18n="lastWeek"></option>
+                        <option value="month" data-i18n="lastMonth"></option>
+                        <option value="beginning" data-i18n="fromTheBeginning"></option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Card for data types -->
+            <div class="card">
+                <!-- Header -->
+                <div class="card-header" data-i18n="dataTypes"></div>
+
+                <!-- Body -->
+                <div class="card-body">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="appcache">
+                        <label class="form-check-label" for="appcache" data-bs-toggle="tooltip"
+                            data-bs-placement="right" data-i18n-tooltip="appcache">AppCache</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cache">
+                        <label class="form-check-label" for="cache" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-i18n-tooltip="cache">Cache</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cacheStorage">
+                        <label class="form-check-label" for="cacheStorage" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-i18n-tooltip="cacheStorage">Cache Storage</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cookies">
+                        <label class="form-check-label" for="cookies" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-i18n-tooltip="cookies">Cookies</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="downloads">
+                        <label class="form-check-label" for="downloads" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-i18n-tooltip="downloads">Downloads</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fileSystems">
+                        <label class="form-check-label" for="fileSystems" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-i18n-tooltip="fileSystems">File Systems</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="formData">
+                        <label class="form-check-label" for="formData" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-i18n-tooltip="formData">Form Data</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="history">
+                        <label class="form-check-label" for="history" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-i18n-tooltip="history">History</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="indexedDB">
+                        <label class="form-check-label" for="indexedDB" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-i18n-tooltip="indexedDB">IndexedDB</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="localStorage">
+                        <label class="form-check-label" for="localStorage" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-i18n-tooltip="localStorage">Local Storage</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="passwords">
+                        <label class="form-check-label" for="passwords" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-i18n-tooltip="passwords">
+                            Passwords&nbsp;
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill move-up" viewBox="0 0 16 16">
+                                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="serviceWorkers">
+                        <label class="form-check-label" for="serviceWorkers" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-i18n-tooltip="serviceWorkers">Service Workers</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="webSQL">
+                        <label class="form-check-label" for="webSQL" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-i18n-tooltip="webSQL">WebSQL</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <script type="text/javascript" src="scripts/popup.js"></script>
+</body>
+
+</html>

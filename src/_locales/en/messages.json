@@ -1,6 +1,74 @@
 {
     "appDescription": {
-        "message": "Automatically cleans browsing history at startup based on selected options.",
-        "description": "The description of the application's functionality."
+        "message": "Automatically cleans browsing history at startup based on selected options."
+    },
+    "appVersion": {
+        "message": "Versione: 1.0.0"
+    },
+    "icons8": {
+        "message": "Icons made by <a href=\"https://icons8.com\" target=\"_blank\" rel=\"noopener noreferrer\">Icons8</a>."
+    },
+    "closeInfoBox": {
+        "message": "Close"
+    },
+    "timeInterval": {
+        "message": "Time Interval"
+    },
+    "lastHour": {
+        "message": "Last hour"
+    },
+    "lastDay": {
+        "message": "Last day"
+    },
+    "lastWeek": {
+        "message": "Last week"
+    },
+    "lastMonth": {
+        "message": "Last month"
+    },
+    "fromTheBeginning": {
+        "message": "From the beginning"
+    },
+    "dataTypes": {
+        "message": "Data types to be cleaned"
+    },
+    "appcache": {
+        "message": "Websites' appcaches"
+    },
+    "cache": {
+        "message": "The browser's cache"
+    },
+    "cacheStorage": {
+        "message": "Cache storage"
+    },
+    "cookies": {
+        "message": "The browser's cookies"
+    },
+    "downloads": {
+        "message": "The browser's download list"
+    },
+    "fileSystems": {
+        "message": "Websites' file systems"
+    },
+    "formData": {
+        "message": "The browser's stored form data"
+    },
+    "history": {
+        "message": "The browser's history"
+    },
+    "indexedDB": {
+        "message": "Websites' IndexedDB data"
+    },
+    "localStorage": {
+        "message": "Websites' local storage data"
+    },
+    "passwords": {
+        "message": "Passwords stored in browser"
+    },
+    "serviceWorkers": {
+        "message": "Service Workers"
+    },
+    "webSQL": {
+        "message": "Websites' WebSQL data"
     }
 }

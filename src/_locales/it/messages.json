@@ -1,6 +1,74 @@
 {
     "appDescription": {
-        "message": "Pulisce automaticamente la cronologia di navigazione all'avvio in base alle opzioni selezionate.",
-        "description": "La descrizione della funzionalità dell'applicazione."
+        "message": "Pulisce automaticamente la cronologia di navigazione all'avvio in base alle opzioni selezionate."
+    },
+    "appVersion": {
+        "message": "Version: 1.0.0"
+    },
+    "icons8": {
+        "message": "Icone realizzate da <a href=\"https://icons8.it\" target=\"_blank\" rel=\"noopener noreferrer\">Icons8</a>."
+    },
+    "closeInfoBox": {
+        "message": "Chiudi"
+    },
+    "timeInterval": {
+        "message": "Intervallo di tempo"
+    },
+    "lastHour": {
+        "message": "Ultima ora"
+    },
+    "lastDay": {
+        "message": "Ultimo giorno"
+    },
+    "lastWeek": {
+        "message": "Ultima settimana"
+    },
+    "lastMonth": {
+        "message": "Ultimo mese"
+    },
+    "fromTheBeginning": {
+        "message": "Dall'inizio"
+    },
+    "dataTypes": {
+        "message": "Tipi di dati da pulire"
+    },
+    "appcache": {
+        "message": "La cache delle app dei siti web"
+    },
+    "cache": {
+        "message": "La cache del browser"
+    },
+    "cacheStorage": {
+        "message": "Lo spazio di archiviazione della cache"
+    },
+    "cookies": {
+        "message": "I cookie del browser"
+    },
+    "downloads": {
+        "message": "L'elenco di download del browser"
+    },
+    "fileSystems": {
+        "message": "I file system dei siti web"
+    },
+    "formData": {
+        "message": "I dati dei moduli memorizzati del browser"
+    },
+    "history": {
+        "message": "La cronologia del browser"
+    },
+    "indexedDB": {
+        "message": "I dati IndexedDB dei siti web"
+    },
+    "localStorage": {
+        "message": "I dati di archiviazione locale dei siti web"
+    },
+    "passwords": {
+        "message": "Le password memorizzate nel browser"
+    },
+    "serviceWorkers": {
+        "message": "I service worker"
+    },
+    "webSQL": {
+        "message": "I dati WebSQL dei siti web"
     }
 }
