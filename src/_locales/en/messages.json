@@ -1,0 +1,6 @@
+{
+    "appDescription": {
+        "message": "Automatically cleans browsing history at startup based on selected options.",
+        "description": "The description of the application's functionality."
+    }
+}
